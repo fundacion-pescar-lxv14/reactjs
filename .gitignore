@@ -1,0 +1,10 @@
+# Modulos
+node_modules/
+docs/
+logs/
+dist/
+build/
+
+
+*.swp
+*.log
