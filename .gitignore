@@ -1,10 +1,6 @@
-# Modulos
-node_modules/
-docs/
-logs/
-dist/
-build/
+node_modules
 
-
-*.swp
-*.log
+/.cache
+/build
+/public/build
+.env
