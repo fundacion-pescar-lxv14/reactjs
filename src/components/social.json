@@ -1,0 +1,38 @@
+[
+    {
+        "link": "https://www.facebook.com/fundacion_pescar",
+        "icon": "facebook",
+        "title": "Seguinos en Facebook",
+        "color": "primary"
+    },
+    {
+        "link": "https://www.instagram.com/fundacion_pescar",
+        "icon":"instagram",
+        "title": "Seguinos en Instagram",
+        "color": "danger"
+    },
+    {
+        "link": "https://www.linkedin.com/in/fundacion-pescar/",
+        "icon": "linkedin",
+        "title": "Seguinos en Linekdin",
+        "color": "primary"
+    },
+    {
+        "link": "https.//twitter.com/fundacion_pescar",
+        "icon": "twitter",
+        "title": "Seguinos en Twitter",
+        "color": "info"
+    },
+    {
+        "link": "https://api.whatsapp.com/send?phone=1103034567&text=consulta sobre capacitaciones/",
+        "icon":"whatsapp",
+        "title": "Envianos un Whatsapp",
+        "color": "success"
+    },
+    {
+        "link": "https://github.com/fundacion-pescar-lxv14/reactjs",
+        "icon": "github",
+        "title": "Descarga el código desde Github",
+        "color": "dark"
+    }
+]
