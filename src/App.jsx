@@ -6,8 +6,14 @@ import { Card } from './components/Card'
 import { Button } from './components/Button'
 
 function App() {
-  const buttons = ['like', 'dislike', 'love'];
-  const images = [
+  const rowStyle = {
+    display:"flex", 
+    flexWrap: "wrap",
+    justifyContent:"center"
+  },
+  colStyle = { flex: "1 0 min(100%, 320px)" },
+  buttons = ['like', 'dislike', 'love'],
+  images = [
     {
       title: "vite",
       img: viteLogo,
@@ -20,10 +26,12 @@ function App() {
     }
   ]
   return (
-    <section style={{display:"flex", justifyContent:"center"}}>
-      { images.map((data, i) => <Card {...data} style={{maxWidth: "320px"}} children={ buttons.map((btn,i) => <Button text={btn}/>)} /> )}
+    <section style={rowStyle}>{ 
+      images.map((data,i) => 
+      <Card key={i} {...data} style={colStyle}> 
+        { buttons.map((btn,i) => <Button key={i} text={btn}/>)} 
+      </Card> )}
     </section>
   )
 }
-
 export default App
