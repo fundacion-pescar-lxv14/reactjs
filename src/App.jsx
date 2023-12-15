@@ -21,20 +21,7 @@ function App() {
   ]
   return (
     <section style={{display:"flex", justifyContent:"center"}}>
-      <Card img={viteLogo} style={{maxWidth: '240px'}}
-        title="vite"
-        content="Plantilla que simplifica la creacion de un proyecto con ReactJS">
-          <Button text="like"/>
-          <Button text="dislike"/>
-          <Button text="love"/>
-      </Card>
-      <Card img={reactLogo} style={{maxWidth: '240px'}}
-        title="react"
-        content="Framework de JS para desarrollo de interfaces de usuario">
-          <Button text="like"/>
-          <Button text="dislike"/>
-          <Button text="love"/>
-      </Card>
+      { images.map((data, i) => <Card {...data} style={{maxWidth: "320px"}} children={ buttons.map((btn,i) => <Button text={btn}/>)} /> )}
     </section>
   )
 }
