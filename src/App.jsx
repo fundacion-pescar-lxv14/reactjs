@@ -1,23 +1,20 @@
 import { useState } from 'react'
 import './App.css'
 
+import CreateBoard from './components/CreateBoard'
+
+import { Score } from './components/Score'
+import { Board } from './components/Board'
+import { Action } from './components/Action'
+
 function App() {
   const [state, setState] = useState(),
-  createBoard = (rows = 3, cols = 3) => {
-    const board = []
-    for(let f = 0; f < rows; f++) {
-      const row = []
-      for(let c = 0; c < cols; c++) row.push("")
-      board.push(row)
-    }
-    return board
-  },
   start = () => {
     setState({
       currentPlayer: "X",
       nextPlayer: "O",
       winner: null,
-      board: createBoard()
+      board: CreateBoard()
     })
   },
   change = (e) => { 
@@ -34,20 +31,14 @@ function App() {
       ))
     }) : 
     alert("Esa posicion esta ocupada. Elija otra casilla")
-  }
+  };
+  const actions = [{text:"Empezar", callback: start}, {text:"Finalizar", callback: start}]
   return (
     <>
       <h1>Tic Tac Toe</h1>
-      <ul>
-        <li>Turno del jugador {state?.currentPlayer}</li>
-        <li>Siguente jugador {state?.nextPlayer}</li>
-      </ul>
-      { state?.board?.map((row, f) => 
-      <div key={f} className='row'>
-        { row.map((cell, c) => 
-          <button id={f+"-"+c} key={c} onClick={change}>{cell}</button> )}
-      </div> )}
-      <button onClick={start}>Empezar</button>
+      <Score {...state}/>
+      <Board {...state} callback={change}/>
+      <Action action={actions}/>
     </>
   )
 }
