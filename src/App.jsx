@@ -11,7 +11,7 @@ import { Action } from './components/Action'
 
 function App() {
   const [state, setState] = useState(StartGame()),
-  start = () => setState({...StartGame(), paused: false}),
+  start = () => confirm("¿quieres empezar un nuevo juego?") ? setState({...StartGame(), paused: false}) : null,
   end = () => setState({...state, paused: !state.paused}),
   setWinner = () => {
     const { board, winner, nextPlayer:nP } = state
@@ -30,7 +30,7 @@ function App() {
       }) : 
       alert("Esa posicion esta ocupada. Elija otra casilla")}
     };
-  const actions = [{text:"Nueva Partida", callback: start}, {text: state.paused ? "Iniciar": "Pausar", callback: end}]
+  const actions = [{text:"Nueva Partida", callback: start}, {text: state.paused ? "Continuar": "Pausar", callback: end}]
   // Component Will Update
   useEffect(() => { setWinner() }, [state])
   return (
