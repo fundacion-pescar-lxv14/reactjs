@@ -1,6 +1,6 @@
 export const Pagination = ({limit, offset, setOffset, pagination}) => {
     const {total_count, count} = pagination ?? {},
-    current = (offset/limit) + 1,
+    current = (offset/limit) + 1 || 1,
     total_pages = Math.ceil(total_count/limit) || 1
     return(
     <footer className="border-top p-3 sticky-bottom bg-body">
