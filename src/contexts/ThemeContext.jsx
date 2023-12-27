@@ -7,7 +7,7 @@ export const ContextProvider = ({children}) => {
     const [[theme,setTheme],color]=[useState('dark'),['primary','secondary','light','dark']],
     choose = (n = 0) => setTheme(color[n]) 
     return (
-    <ThemeContext.Provider value={{theme,choose}}>
+    <ThemeContext.Provider value={{theme,color,choose}}>
         {children}
     </ThemeContext.Provider>
 )}
