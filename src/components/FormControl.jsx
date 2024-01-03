@@ -8,5 +8,5 @@ export const FormControl = ({children, ...props}) =>{
         return <input className="form-control"{...props}/>
 } }
 
-export const Button = ({color="dark", text}) => 
-    <button className={"btn btn-"+color}>{text}</button>
+export const Button = ({color="dark", text, ...props}) => 
+    <button className={"z-0 btn btn-"+color}{...props}>{text}</button>
