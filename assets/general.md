@@ -4,9 +4,9 @@
 
 1. [Declarativo](#declarativo)
 1. [Componentes](#componentes)
-    * [class](#components)
-    * [function](#components)
-    * [lambda](#components)
+    * [class](#class-component)
+    * [function](#function-component)
+    * [lambda](#lambda-component)
 1. [multiplataforma](#multiplataforma)
 1. [Virtual DOM](#virtual-dom)
 1. [Propiedades](#propiedades)
