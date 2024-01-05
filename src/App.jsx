@@ -4,9 +4,9 @@ import { TasksAdd, TasksFilter, TasksList } from "./components"
 function App() {
     return(
     <TasksProvider>
-        <TasksAdd/>
+        <TasksAdd style={{textAlign: 'center'}}/>
         <TasksFilter/>
-        <TasksList/>
+        <TasksList sx={{maxWidth: '1320px', margin: 'auto'}}/>
     </TasksProvider>
 )}
 
