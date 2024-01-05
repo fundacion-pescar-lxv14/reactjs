@@ -2,9 +2,9 @@ import { createContext, useState } from 'react'
 
 export const TasksContext = createContext([]);
 export const TasksProvider = ({children}) => {
-    const [task, setTask] = useState([])
+    const [tasks, setTasks] = useState([])
     return(
-    <TasksContext.Provider value={{task,setTask}}>
+    <TasksContext.Provider value={{tasks,setTasks}}>
         {children}
     </TasksContext.Provider>
 )}
