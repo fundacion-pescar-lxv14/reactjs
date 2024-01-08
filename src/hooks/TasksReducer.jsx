@@ -1,7 +1,7 @@
 export const TasksReducer = (state, action) => {
     switch(action.type){
     case "ADD_TASK":
-        return [...state, {...action.task, fulfilled: false} ];
+        return [...state, {id: state.length,...action.task,fulfilled:false}];
     case "EDIT_TASK":
         return state.map((task,i) => 
         task.id === action.id ? action.task : task);
