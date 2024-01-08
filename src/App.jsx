@@ -1,12 +1,14 @@
 import { TasksProvider } from "./hooks"
 import { TasksAdd, TasksFilter, TasksList } from "./components"
+import { col, containerXXL } from "./styles"
 
 function App() {
+
     return(
     <TasksProvider>
-        <TasksAdd style={{textAlign: 'center'}}/>
+        <TasksAdd style={col()}/>
         <TasksFilter/>
-        <TasksList sx={{maxWidth: '1320px', margin: 'auto'}}/>
+        <TasksList sx={containerXXL}/>
     </TasksProvider>
 )}
 

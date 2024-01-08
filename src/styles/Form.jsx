@@ -3,7 +3,6 @@ export const form = (display='flex', gap='.5rem', margin='auto') => ({
     gap,
     margin,
 })
-
 export const col = (maxWidth='540px') => ({
     ...form('grid'),
     maxWidth,
