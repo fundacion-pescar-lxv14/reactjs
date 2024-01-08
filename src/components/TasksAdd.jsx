@@ -1,23 +1,22 @@
-import { useRef, useContext } from "react";
+import { useRef, useContext, useReducer } from "react";
 import { textArea } from "../styles";
 
 import { FormControl } from "@mui/base";
 import { Textarea } from "@mui/joy";
 import { Input, Button } from "@mui/material";
 
-import { TasksContext } from "../hooks/TasksProvider";
+import { TasksContext, TasksReducer } from "../hooks";
+import { isEmpty, getValues } from "../utils"
 
 function TasksAdd(props){
-    const {tasks, setTasks} = useContext(TasksContext);
+    const {tasks, dispatch} = useContext(TasksContext);
     const titleRef = useRef("");
     const contentRef = useRef("");
-
     const AddTask = () =>{
-        const [title, content] = [titleRef.current.childNodes[0].value, contentRef.current.childNodes[0].value];
-
-        (title.trim() !== "" && content.trim() !== "") ?
-        setTasks([...tasks, { id: tasks.length, title, content }]) :
-        alert("Todos los campos son obligatorios")
+        const [title, content] = getValues([titleRef, contentRef]);
+        (isEmpty(title) && isEmpty(content)) ?
+        alert("Todos los campos son obligatorios") :
+        dispatch({type: "ADD_TASK", task:{id:tasks.length, title, content}})
     }
     return(
     <FormControl {...props}>
