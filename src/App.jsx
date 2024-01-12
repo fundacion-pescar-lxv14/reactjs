@@ -1,4 +1,4 @@
-import { TasksProvider } from "./hooks"
+import { TasksProvider, EditProvider } from "./hooks"
 import { TasksAdd, TasksFilter, TasksList } from "./components"
 import { col, containerXXL } from "./styles"
 
@@ -6,9 +6,11 @@ function App() {
 
     return(
     <TasksProvider>
-        <TasksAdd style={col()}/>
-        <TasksFilter/>
-        <TasksList sx={containerXXL}/>
+        <EditProvider>
+            <TasksAdd style={col()}/>
+            <TasksFilter/>
+            <TasksList sx={containerXXL}/>
+        </EditProvider>
     </TasksProvider>
 )}
 

@@ -4,11 +4,14 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import DoneIcon from "@mui/icons-material/Done";
 
 import { useContext } from "react";
-import { TasksContext, EditContext } from "../hooks";
+import { TasksContext, EditContext, useRequest } from "../hooks";
 
 export const TaskAction = ({id, status}) =>{
     const { dispatch } = useContext(TasksContext);
     const { getTask } = useContext(EditContext);
+    const deleteOne = () => {
+        useRequest({id, method: "DELETE"})
+    }
     return(
     <CardActions sx={{justifyContent: "flex-end"}}>
         <Typography sx={{paddingLeft: '.5rem', width: '100%'}}>
@@ -17,7 +20,7 @@ export const TaskAction = ({id, status}) =>{
         <IconButton onClick={()=>getTask(id)}>
             <EditIcon/>
         </IconButton>
-        <IconButton onClick={()=>dispatch({type:"DELETE_TASK",id})}>
+        <IconButton onClick={deleteOne}>
             <DeleteIcon/>
         </IconButton>
         <IconButton onClick={()=>dispatch({type:"CHECK_TASK",id})}>

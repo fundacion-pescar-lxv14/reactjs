@@ -7,7 +7,7 @@ function TasksList(props){
     const { tasks } = useContext(TasksContext);
     return(
     <Stack spacing={2} direction={{xs: 'column', sm:'row'}} useFlexGap flexWrap="wrap" {...props}>
-        { tasks?.map((props,i) => <TaskItem key={i} id={i} {...props}/> )}
+        { tasks?.map((props,i) => <TaskItem key={i} {...props}/> )}
     </Stack>
 )}
 
